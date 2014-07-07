@@ -1,0 +1,102 @@
+.tree {
+  width: 1000px;
+  white-space: nowrap; }
+  .tree ul {
+    padding: 0;
+    margin: 0 auto;
+    position: relative; }
+    .tree ul:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .tree ul li {
+      list-style: none;
+      position: relative;
+      text-align: center; }
+      .tree ul li span {
+        width: 60px;
+        height: 60px;
+        border: 1px solid black;
+        display: inline-block;
+        padding: 5px;
+        margin: 10px 5px 0px 5px; }
+      .tree ul li ul {
+        display: table;
+        padding: 0;
+        margin: 0 auto;
+        margin-top: 10px; }
+        .tree ul li ul:after {
+          content: "";
+          display: table;
+          clear: both; }
+        .tree ul li ul li {
+          float: left;
+          position: relative; }
+  .tree ol > li:before {
+    content: "";
+    width: 50%;
+    height: 10px;
+    border-right: 1px solid #cacaca;
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .tree li ul:before {
+    content: "";
+    width: 50%;
+    height: 10px;
+    border-right: 1px solid #cacaca;
+    position: absolute;
+    left: 0;
+    top: -10px; }
+  .tree ul > li:before {
+    content: "";
+    width: 50%;
+    height: 10px;
+    border-left: none;
+    border-top: 1px solid #cacaca;
+    border-right: none;
+    position: absolute;
+    right: 0; }
+  .tree ul > li:after {
+    content: "";
+    width: 50%;
+    height: 10px;
+    border-right: 1px solid #cacaca;
+    border-top: 1px solid #cacaca;
+    border-left: none;
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .tree ul > li:first-child:before {
+    content: "";
+    width: 50%;
+    height: 10px;
+    border-left: 1px solid #cacaca;
+    border-top: 1px solid #cacaca;
+    border-right: none;
+    position: absolute;
+    right: 0; }
+  .tree ul > li:first-child:after {
+    content: "";
+    border: none; }
+  .tree ul > li:last-child:before {
+    content: "";
+    width: 50%;
+    height: 10px;
+    border-right: 1px solid #cacaca;
+    border-top: 1px solid #cacaca;
+    border-left: none;
+    position: absolute;
+    left: 0; }
+  .tree ul > li:last-child:after {
+    content: "";
+    border: none; }
+  .tree ul > li:only-child:before {
+    content: "";
+    width: 50%;
+    height: 10px;
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid #cacaca;
+    position: absolute;
+    right: 0; }

@@ -1,0 +1,141 @@
+@mixin clearfix() {
+  &:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+}
+
+$colorConnector : #cacaca;
+
+.tree {
+
+  width: 1000px;
+  white-space: nowrap;
+
+  ul {
+	@include clearfix();
+	padding: 0;
+	margin: 0 auto;
+	position: relative;
+
+	li {
+	  list-style: none;
+	  position: relative;
+	  text-align: center;
+
+	  span {
+		width: 60px;
+		height: 60px;
+		border: 1px solid black;
+		display: inline-block;
+		padding: 5px;
+		margin: 10px 5px 0px 5px;
+	  }
+
+	  ul {
+		@include clearfix();
+		display: table;
+		padding: 0;
+		margin: 0 auto;
+		margin-top: 10px;
+
+		li {
+		  float: left;
+		  position: relative;
+		}
+	  }
+	}
+
+  }
+
+  // connectors
+
+  ol > li:before {
+	content: "";
+	width: 50%;
+	height: 10px;
+	border-right: 1px solid $colorConnector;
+	position: absolute;
+	left: 0;
+	top: 0;
+  }
+
+  li ul:before {
+	content: "";
+	width: 50%;
+	height: 10px;
+	border-right: 1px solid  $colorConnector;
+	position: absolute;
+	left: 0;
+	top: -10px;
+
+  }
+
+  ul > li:before {
+	content: "";
+	width: 50%;
+	height: 10px;
+	border-left: none;
+	border-top: 1px solid $colorConnector;
+	border-right: none;
+	position: absolute;
+	right: 0;
+
+  }
+
+  ul > li:after {
+	content: "";
+	width: 50%;
+	height: 10px;
+	border-right: 1px solid $colorConnector;
+	border-top: 1px solid $colorConnector;
+	border-left: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+  }
+
+  ul > li:first-child:before {
+	content: "";
+	width: 50%;
+	height: 10px;
+	border-left: 1px solid $colorConnector;
+	border-top: 1px solid $colorConnector;
+	border-right: none;
+	position: absolute;
+	right: 0;
+  }
+  ul > li:first-child:after {
+	content: "";
+	border: none;
+  }
+
+  ul > li:last-child:before {
+	content: "";
+	width: 50%;
+	height: 10px;
+	border-right: 1px solid $colorConnector;
+	border-top: 1px solid $colorConnector;
+	border-left: none;
+	position: absolute;
+	left: 0;
+  }
+  ul > li:last-child:after {
+	content: "";
+	border: none;
+  }
+
+  ul > li:only-child:before {
+	content: "";
+	width: 50%;
+	height: 10px;
+	border-left: none;
+	border-top: none;
+	border-right: 1px solid $colorConnector;
+	position: absolute;
+	right: 0;
+  }
+}
+
+
